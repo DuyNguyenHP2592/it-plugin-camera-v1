@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin id="it-plugin-camera" version="20170312" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>it-plugin-camera</name>
+  <description>Cordova plugin that allows camera interaction from HTML code. Show camera preview popup on top of the HTML.</description>
+  <license>Apache 2.0</license>
+  <keywords>it-plugin-camera</keywords>
+  <repo>https://github.com/daoquyen2008/it-plugin-camera.git</repo>
+  <issue>https://github.com/daoquyen2008/it-plugin-camera.git</issue>
+
+  <js-module src="www/cam.js" name="cam">
+    <clobbers target="cam" />
+  </js-module>
+
+  <platform name="android">
+    <source-file src="src/android/AutoFitTextureView.java" target-dir="src/it/plugin/camera" />
+    <source-file src="src/android/CameraActivity.java" target-dir="src/it/plugin/camera" />
+    <source-file src="src/android/Camera1Activity.java" target-dir="src/it/plugin/camera" />
+    <source-file src="src/android/CameraActivity_PicSaveView.java" target-dir="src/it/plugin/camera" />
+  <source-file src="src/android/camLauncher.java" target-dir="src/it/plugin/camera" />
+    <source-file src="src/android/CustomSurfaceView.java" target-dir="src/it/plugin/camera" />
+    <source-file src="src/android/ItemImage.java" target-dir="src/it/plugin/camera" />
+    <source-file src="src/android/ItemsListAdapter.java" target-dir="src/it/plugin/camera" />
+    <source-file src="src/android/Preview.java" target-dir="src/it/plugin/camera" />
+    <source-file src="src/android/Camera1Preview.java" target-dir="src/it/plugin/camera" />
+    <source-file src="src/android/SavePhoto.java" target-dir="src/it/plugin/camera" />
+    <source-file src="src/android/SavePhotoAsync.java" target-dir="src/it/plugin/camera" />
+    <source-file src="src/android/TapGestureDetector.java" target-dir="src/it/plugin/camera" />
+	
+    <source-file src="src/android/layout/activity_camera.xml" target-dir="res/layout" />
+    <source-file src="src/android/layout/fragment_camera2_basic.xml" target-dir="res/layout" />
+    <source-file src="src/android/layout/row.xml" target-dir="res/layout" />
+    <source-file src="src/android/layout-land/fragment_camera2_basic.xml" target-dir="res/layout-land" />
+    <source-file src="src/android/layout-land/camera_activity.xml" target-dir="res/layout-land" />
+    <source-file src="src/android/values/camera_ids.xml" target-dir="res/values" />
+	
+    <source-file src="src/android/drawable/accept.png" target-dir="res/drawable" />
+    <source-file src="src/android/drawable/back.png" target-dir="res/drawable" />
+    <source-file src="src/android/drawable/btn_cam.png" target-dir="res/drawable" />
+    <source-file src="src/android/drawable/btn_cam1.png" target-dir="res/drawable" />
+    <source-file src="src/android/drawable/refresh.png" target-dir="res/drawable" />
+	
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="cam">
+        <param name="android-package" value="it.plugin.camera.camLauncher" />
+          <!--<param name="onload" value="true" />-->
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-feature android:name="android.hardware.camera" />
+      <uses-feature android:name="android.hardware.camera.autofocus" />
+      <uses-permission android:name="android.permission.CAMERA" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <!--<activity android:name="it/plugin/camera" android:screenOrientation="portrait" />-->
+    </config-file>
+  </platform>
+
+</plugin>

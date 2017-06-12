@@ -1,0 +1,29 @@
+{
+  "name": "it-plugin-camera",
+  "version": "0.0.9",
+  "description": "Cordova plugin that allows camera interaction from HTML code. Show camera preview below or on top of the HTML.",
+  "keywords": [
+    "cordova"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daoquyen2008/it-plugin-camera.git"
+  },
+  "author": {
+    "name": "it",
+    "email": "it.sitcdv@gmail.com",
+    "url": "vnncorp.com"
+  },
+  "license": "Apache 2.0",
+  "homepage": "https://github.com/daoquyen2008/it-plugin-camera.git",
+  "dependencies": {
+    "cordova": "*"
+  },
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-uglify": "*",
+    "pump": "*",
+    "gulp-release-it": "~1"
+  }
+}
+

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ Copyright 2014 The Android Open Source Project
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|start">
+
+        <RelativeLayout
+            android:id="@+id/frame_camera"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@+id/texture"
+            android:layout_alignParentStart="false"
+            android:layout_toStartOf="@+id/control"
+            android:foregroundGravity="left">
+
+            <it.plugin.camera.AutoFitTextureView
+                android:id="@+id/texture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentTop="false" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imgTouch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:src="@drawable/focus"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|start" />
+
+        <CheckBox
+            android:id="@+id/chbShowInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="5dp"
+            android:checked="true"
+            android:padding="10dp"
+            android:text="Info"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/tbDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="10"
+            android:text="2016-11-19 12:08"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tbInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentRight="false"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="false"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="40dp"
+            android:layout_marginRight="80dp"
+            android:background="@android:color/holo_blue_dark"
+            android:clickable="false"
+            android:freezesText="false"
+            android:padding="10dp"
+            android:text="MRKU5065477 \n CMA | UX5N | BT \n RP(1)"
+            android:textAlignment="center"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/frame_image"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="false"
+            android:layout_gravity="right|end"
+            android:background="@android:color/white"
+            android:elevation="1dp">
+
+            <LinearLayout
+                android:id="@+id/pane_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_dark"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp">
+
+                <ListView
+                    android:id="@+id/list_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_buttom2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        android:layout_gravity="top"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+            android:id="@+id/btnPicture2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical|center"
+            android:background="@android:color/transparent"
+            android:saveEnabled="false"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_cam"
+            android:textAlignment="center" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_buttom"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentTop="false"
+        android:layout_gravity="left"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnAccept"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"
+            android:saveEnabled="false"
+            android:scaleType="fitCenter"
+            android:src="@drawable/accept"
+            android:layout_gravity="top|right|end"
+            android:visibility="visible"
+            android:layout_marginTop="20dp" />
+
+        <ImageButton
+            android:id="@+id/btnRefresh"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="left|center"
+            android:background="@android:color/transparent"
+            android:saveEnabled="false"
+            android:scaleType="fitCenter"
+            android:src="@drawable/refresh"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom|left|start"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/back"
+            android:layout_marginBottom="20dp" />
+
+        <ImageButton
+            android:id="@+id/btnPicture"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="right|center|end"
+            android:background="@android:color/transparent"
+            android:saveEnabled="false"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_cam"
+            android:textAlignment="center" />
+
+    </FrameLayout>
+</RelativeLayout>
